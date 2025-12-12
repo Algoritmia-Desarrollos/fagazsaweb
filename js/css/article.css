@@ -1,0 +1,168 @@
+article h2 {
+    color: #4243a6;
+    padding-bottom: 10px;
+}
+
+article ul {
+    color: #7475c8;
+}
+
+article ul ul {
+    color: #4243a6;
+    font-size: 20px;
+}
+
+article ul ul li {
+    margin-bottom: 8px;
+}
+
+article .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns */
+}
+
+article .col-md-6 {
+    flex: 0 0 100%; /* Set the width of each column to 100% */
+    max-width: calc(50% - 15px);
+    margin: 7.5px; /* Add a small margin for spacing between columns */
+    overflow: hidden; /* Hide overflow to prevent large images from breaking the layout */
+    
+}
+
+article .col-md-6 img.img-fluid {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+    z-index: 100;
+    cursor: pointer; /* Agrega esta línea para cambiar el cursor */
+
+}
+
+article .col-md-6:hover img.img-fluid {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+article span.caption {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+    article .col-md-6 {
+        flex: 0 0 calc(50% - 15px); /* Adjust the width for larger screens with two columns */
+        max-width: calc(50% - 15px);
+    }
+
+    article .col-md-6 img.img-fluid {
+        height: 350px; /* Adjust the fixed height for larger screens */
+    }
+}
+
+/* Your existing CSS styles... */
+
+
+/* Add these media queries for better responsiveness */
+@media (max-width: 1200px) {
+  
+    article .modal {
+        padding-top: 30px;
+    }
+
+    article .modal-content {
+        width: 60%;
+        max-width: 100%;
+        height: 60%;
+    }
+
+    article .close {
+        top: 15px;
+        right: 15px;
+        font-size: 50px;
+    }
+}
+
+
+/* Add these media queries for better responsiveness */
+@media (max-width: 767px) {
+    article .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    article .col-md-6 img.img-fluid {
+        height: auto; /* Allow images to adjust their height proportionally on smaller screens */
+    }
+
+    article .col-md-6:hover img.img-fluid {
+        transform: none; /* Remove the scale transform on hover for smaller screens */
+    }
+
+    article .modal {
+        padding-top: 30px;
+    }
+
+    article .modal-content {
+        width: 80%;
+        max-width: 100%;
+        height: 50%;
+    }
+
+    article .close {
+        top: 15px;
+        right: 15px;
+        font-size: 40px;
+    }
+}
+
+/* Add these styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 100;
+}
+
+.modal-content {
+    top: 25px;
+    margin: auto;
+    display: block;
+    width: 50%;
+    height: 90%;
+    max-width: 800px;
+    z-index: 100;
+
+}
+
+.close {
+    position: absolute;
+    top: 90px;
+    right: 100px; /* Adjusted right position for smaller screens */
+    color: #f1f1f1;
+    font-size: 50px; /* Adjusted font size for smaller screens */
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 100;
+
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
